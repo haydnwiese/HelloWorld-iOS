@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func showMessage(sender: UIButton) {
         
         if let label = sender.titleLabel?.text {
-            var description: String;
+            var description: String?
             
             let alertController = UIAlertController(title: "Meaning",
                                                     message: label,
