@@ -13,6 +13,9 @@
 		AAC20501241E0A0C009921A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC204FF241E0A0C009921A4 /* Main.storyboard */; };
 		AAC20503241E0A10009921A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC20502241E0A10009921A4 /* Assets.xcassets */; };
 		AAC20506241E0A10009921A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC20504241E0A10009921A4 /* LaunchScreen.storyboard */; };
+		AAC2050E241E0F1D009921A4 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2050D241E0F1D009921A4 /* CardModel.swift */; };
+		AAC20510241E10AD009921A4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC2050F241E10AD009921A4 /* Card.swift */; };
+		AAC20512241E14EE009921A4 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC20511241E14EE009921A4 /* CardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		AAC20502241E0A10009921A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAC20505241E0A10009921A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAC20507241E0A10009921A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC2050D241E0F1D009921A4 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		AAC2050F241E10AD009921A4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		AAC20511241E14EE009921A4 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				AAC204F9241E0A0C009921A4 /* AppDelegate.swift */,
 				AAC204FB241E0A0C009921A4 /* SceneDelegate.swift */,
 				AAC204FD241E0A0C009921A4 /* ViewController.swift */,
+				AAC2050D241E0F1D009921A4 /* CardModel.swift */,
+				AAC2050F241E10AD009921A4 /* Card.swift */,
+				AAC20511241E14EE009921A4 /* CardCollectionViewCell.swift */,
 				AAC204FF241E0A0C009921A4 /* Main.storyboard */,
 				AAC20502241E0A10009921A4 /* Assets.xcassets */,
 				AAC20504241E0A10009921A4 /* LaunchScreen.storyboard */,
@@ -139,7 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC204FE241E0A0C009921A4 /* ViewController.swift in Sources */,
+				AAC2050E241E0F1D009921A4 /* CardModel.swift in Sources */,
+				AAC20510241E10AD009921A4 /* Card.swift in Sources */,
 				AAC204FA241E0A0C009921A4 /* AppDelegate.swift in Sources */,
+				AAC20512241E14EE009921A4 /* CardCollectionViewCell.swift in Sources */,
 				AAC204FC241E0A0C009921A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
