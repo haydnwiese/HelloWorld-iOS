@@ -31,7 +31,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath)
+        // Get a CardCollectionViewCell object
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as! CardCollectionViewCell
+        
+        // Get the card that the collection view is trying to display
+        let card = cardArray[indexPath.row]
+        
+        // Set the card for the cell
+        cell.setCard(card)
         
         return cell
     }

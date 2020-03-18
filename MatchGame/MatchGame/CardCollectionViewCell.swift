@@ -14,4 +14,19 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backImageView: UIImageView!
     
+    var card:Card?
+    
+    func setCard(_ card: Card) {
+        self.card = card
+        
+        frontImageView.image = UIImage(named: card.imageName)
+    }
+    
+    func flip() {
+        
+    }
+    
+    func flipBack() {
+        
+    }
 }
