@@ -52,7 +52,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Get the card that the user selected
         let card = cardArray[indexPath.row]
         
-        if !card.isFlipped {
+        if !card.isFlipped && !card.isMatched {
             card.isFlipped = true
             cell.flip()
             

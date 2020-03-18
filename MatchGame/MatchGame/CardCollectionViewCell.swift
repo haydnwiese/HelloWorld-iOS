@@ -19,6 +19,17 @@ class CardCollectionViewCell: UICollectionViewCell {
     func setCard(_ card: Card) {
         self.card = card
         
+        if card.isMatched {
+            // If the card has been matched, make the image views invisible
+            backImageView.alpha = 0
+            frontImageView.alpha = 0
+            return
+        } else {
+            // If the card hasn't been matched, make the image views visible
+            backImageView.alpha = 1
+            frontImageView.alpha = 1
+        }
+        
         frontImageView.image = UIImage(named: card.imageName)
 
         if card.isFlipped {
