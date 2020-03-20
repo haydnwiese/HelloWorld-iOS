@@ -43,6 +43,13 @@ class CardModel {
         }
         
         // Randomize the array
+        for i in 0...generatedCardsArray.count - 1 {
+            let randomNumber = Int(arc4random_uniform(UInt32(generatedCardsArray.count)))
+            
+            let temporaryStorage = generatedCardsArray[i]
+            generatedCardsArray[i] = generatedCardsArray[randomNumber]
+            generatedCardsArray[randomNumber] = temporaryStorage
+        }
         
         // Return the array
         return generatedCardsArray
