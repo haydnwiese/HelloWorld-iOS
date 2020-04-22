@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BQT-Fj-Tpg">
-                                <rect key="frame" x="20" y="64" width="374" height="428.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="482.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxG-ue-Yon">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -37,7 +37,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="dha-9h-qZX">
-                                        <rect key="frame" x="0.0" y="108.5" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="108.5" width="374" height="374"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dha-9h-qZX" secondAttribute="height" multiplier="1:1" id="fC0-sL-6r8"/>
@@ -49,13 +49,16 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Eoc-EM-7Qn" secondAttribute="trailing" id="TCJ-pe-bSu"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="dha-9h-qZX" secondAttribute="trailing" id="vSa-JU-Qe3"/>
                                 </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xn9-lR-x1J" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="20" y="572" width="264" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BQT-Fj-Tpg" secondAttribute="trailing" id="D5A-Fj-4ht"/>
-                            <constraint firstItem="BQT-Fj-Tpg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UZY-ND-92s"/>
                             <constraint firstAttribute="trailing" secondItem="BQT-Fj-Tpg" secondAttribute="trailing" constant="20" symbolic="YES" id="bQb-r4-b80"/>
                             <constraint firstItem="BQT-Fj-Tpg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="bbS-XJ-Nzn"/>
                             <constraint firstItem="BQT-Fj-Tpg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c3H-Yb-DAg"/>
