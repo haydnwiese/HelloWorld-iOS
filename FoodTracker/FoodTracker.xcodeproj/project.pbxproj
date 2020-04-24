@@ -15,6 +15,7 @@
 		AA9188FB244F942000D0BACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9188F9244F942000D0BACB /* LaunchScreen.storyboard */; };
 		AA918903244FC4DD00D0BACB /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA918902244FC4DD00D0BACB /* RatingControl.swift */; };
 		AA918905245290FA00D0BACB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA918904245290FA00D0BACB /* Meal.swift */; };
+		AA918908245375D300D0BACB /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA918907245375D300D0BACB /* MealTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AA9188FC244F942000D0BACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA918902244FC4DD00D0BACB /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		AA918904245290FA00D0BACB /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		AA918907245375D300D0BACB /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				AA9188F2244F941B00D0BACB /* ViewController.swift */,
 				AA918902244FC4DD00D0BACB /* RatingControl.swift */,
 				AA918904245290FA00D0BACB /* Meal.swift */,
+				AA918907245375D300D0BACB /* MealTableViewCell.swift */,
 				AA9188F4244F941B00D0BACB /* Main.storyboard */,
 				AA9188F7244F942000D0BACB /* Assets.xcassets */,
 				AA9188F9244F942000D0BACB /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				AA918905245290FA00D0BACB /* Meal.swift in Sources */,
 				AA918903244FC4DD00D0BACB /* RatingControl.swift in Sources */,
+				AA918908245375D300D0BACB /* MealTableViewCell.swift in Sources */,
 				AA9188F3244F941B00D0BACB /* ViewController.swift in Sources */,
 				AA9188EF244F941B00D0BACB /* AppDelegate.swift in Sources */,
 				AA9188F1244F941B00D0BACB /* SceneDelegate.swift in Sources */,
