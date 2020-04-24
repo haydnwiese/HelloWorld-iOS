@@ -14,6 +14,7 @@
 		AA9188F8244F942000D0BACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9188F7244F942000D0BACB /* Assets.xcassets */; };
 		AA9188FB244F942000D0BACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9188F9244F942000D0BACB /* LaunchScreen.storyboard */; };
 		AA918903244FC4DD00D0BACB /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA918902244FC4DD00D0BACB /* RatingControl.swift */; };
+		AA918905245290FA00D0BACB /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA918904245290FA00D0BACB /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AA9188FA244F942000D0BACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA9188FC244F942000D0BACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA918902244FC4DD00D0BACB /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		AA918904245290FA00D0BACB /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				AA9188F0244F941B00D0BACB /* SceneDelegate.swift */,
 				AA9188F2244F941B00D0BACB /* ViewController.swift */,
 				AA918902244FC4DD00D0BACB /* RatingControl.swift */,
+				AA918904245290FA00D0BACB /* Meal.swift */,
 				AA9188F4244F941B00D0BACB /* Main.storyboard */,
 				AA9188F7244F942000D0BACB /* Assets.xcassets */,
 				AA9188F9244F942000D0BACB /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA918905245290FA00D0BACB /* Meal.swift in Sources */,
 				AA918903244FC4DD00D0BACB /* RatingControl.swift in Sources */,
 				AA9188F3244F941B00D0BACB /* ViewController.swift in Sources */,
 				AA9188EF244F941B00D0BACB /* AppDelegate.swift in Sources */,
