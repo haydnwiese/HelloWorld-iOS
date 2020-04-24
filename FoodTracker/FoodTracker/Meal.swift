@@ -14,7 +14,7 @@ class Meal {
     var photo: UIImage?
     var rating: Int
     
-    init?(name: String, photo: UIImage, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int) {
         // Name must not be empty
         guard !name.isEmpty else {
             return nil
