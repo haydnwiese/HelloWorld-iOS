@@ -14,6 +14,7 @@
 		AAF6BBC62463963A001E962F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6BBC52463963A001E962F /* InterfaceController.swift */; };
 		AAF6BBC82463963A001E962F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6BBC72463963A001E962F /* ExtensionDelegate.swift */; };
 		AAF6BBCA2463963B001E962F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF6BBC92463963B001E962F /* Assets.xcassets */; };
+		AAF6BBDB2463A0FC001E962F /* CovidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6BBDA2463A0FC001E962F /* CovidService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		AAF6BBC72463963A001E962F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		AAF6BBC92463963B001E962F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF6BBCB2463963B001E962F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF6BBDA2463A0FC001E962F /* CovidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +116,21 @@
 		AAF6BBC42463963A001E962F /* CovidTracker WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AAF6BBD92463A0E4001E962F /* Service */,
 				AAF6BBC52463963A001E962F /* InterfaceController.swift */,
 				AAF6BBC72463963A001E962F /* ExtensionDelegate.swift */,
 				AAF6BBC92463963B001E962F /* Assets.xcassets */,
 				AAF6BBCB2463963B001E962F /* Info.plist */,
 			);
 			path = "CovidTracker WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		AAF6BBD92463A0E4001E962F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AAF6BBDA2463A0FC001E962F /* CovidService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF6BBDB2463A0FC001E962F /* CovidService.swift in Sources */,
 				AAF6BBC82463963A001E962F /* ExtensionDelegate.swift in Sources */,
 				AAF6BBC62463963A001E962F /* InterfaceController.swift in Sources */,
 			);

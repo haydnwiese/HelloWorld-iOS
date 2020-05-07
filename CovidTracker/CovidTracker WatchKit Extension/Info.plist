@@ -32,6 +32,8 @@
 	</dict>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+	<key>UIRequiresPersistentWiFi</key>
+	<true/>
 	<key>WKWatchOnly</key>
 	<true/>
 </dict>
