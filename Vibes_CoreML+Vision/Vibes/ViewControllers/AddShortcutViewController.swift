@@ -69,7 +69,8 @@ class AddShortcutViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func savePressed(_ sender: Any) {
-    // TBD
+    print("Training data ready for label: \(selectedEmoji ?? "")")
+    performSegue(withIdentifier: "AddShortcutUnwindSegue", sender: self)
   }
 }
 

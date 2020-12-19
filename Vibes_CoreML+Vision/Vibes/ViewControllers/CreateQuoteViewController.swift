@@ -31,6 +31,8 @@
 /// THE SOFTWARE.
 
 import UIKit
+import CoreML
+import Vision
 
 class CreateQuoteViewController: UIViewController {
   // MARK: - Properties
@@ -39,6 +41,26 @@ class CreateQuoteViewController: UIViewController {
   @IBOutlet weak var addStickerButton: UIBarButtonItem!
   @IBOutlet weak var stickerView: UIView!
 	@IBOutlet weak var starterLabel: UILabel!
+  
+  // Image analysis request that's created when first accessed
+  private lazy var classificationRequest: VNCoreMLRequest = {
+    do {
+      // Create an instance of the model
+      let model = try VNCoreMLModel(for: SqueezeNet().model)
+      // Instantiate an image analysis request based on the model
+      let request = VNCoreMLRequest(model: model) { [weak self] request, error in
+        guard let self = self else {
+          return
+        }
+        self.processClassifications(for: request, error: error)
+      }
+      // Use Vision to crop the input image to match what the model expects
+      request.imageCropAndScaleOption = .centerCrop
+      return request
+    } catch {
+      fatalError("Failed to load Vision ML model: \(error)")
+    }
+  }()
 	
   private lazy var quoteList: [Quote] = {
     guard let path = Bundle.main.path(forResource: "Quotes", ofType: "plist")
@@ -118,13 +140,6 @@ private extension CreateQuoteViewController {
     stickerLabel.textAlignment = .center
     stickerLabel.adjustsFontSizeToFitWidth = true
     
-    // Add gesture recognizer
-    stickerLabel.isUserInteractionEnabled = true
-    let panGestureRecognizer = UIPanGestureRecognizer(
-      target: self,
-      action: #selector(handlePanGesture(_:)))
-    stickerLabel.addGestureRecognizer(panGestureRecognizer)
-    
     // Add sticker to the canvas
     stickerView.addSubview(stickerLabel)
   }
@@ -158,6 +173,40 @@ private extension CreateQuoteViewController {
     }
     return nil
   }
+  
+  func classifyImage(_ image: UIImage) {
+    guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)) else {
+      return
+    }
+    guard let ciImage = CIImage(image: image) else {
+      fatalError("Unable to create \(CIImage.self) from \(image)")
+    }
+    
+    DispatchQueue.global(qos: .userInitiated).async {
+      let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+      do {
+        try handler.perform([self.classificationRequest])
+      } catch {
+        print("Failed to perform classification. \(error.localizedDescription)")
+      }
+    }
+  }
+  
+  func processClassifications(for request: VNRequest, error: Error?) {
+    DispatchQueue.main.async {
+      if let classifications = request.results as? [VNClassificationObservation] {
+        let topClassifications = classifications.prefix(2).map {
+          (confidence: $0.confidence, identifier: $0.identifier)
+        }
+        print("Top classifications: \(topClassifications)")
+        let topIdentifiers = topClassifications.map { $0.identifier.lowercased() }
+        
+        if let quote = self.getQuote(for: topIdentifiers) {
+          self.quoteTextView.text = quote.text
+        }
+      }
+    }
+  }
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -172,9 +221,7 @@ extension CreateQuoteViewController: UIImagePickerControllerDelegate, UINavigati
 		starterLabel.isHidden = true
     clearStickersFromCanvas()
     
-    if let quote = getQuote() {
-      quoteTextView.text = quote.text
-    }
+    classifyImage(image)
   }
 }
 
