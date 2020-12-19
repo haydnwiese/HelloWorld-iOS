@@ -41,6 +41,7 @@ class CreateQuoteViewController: UIViewController {
   @IBOutlet weak var addStickerButton: UIBarButtonItem!
   @IBOutlet weak var stickerView: UIView!
 	@IBOutlet weak var starterLabel: UILabel!
+  var drawingView: DrawingView!
   
   // Image analysis request that's created when first accessed
   private lazy var classificationRequest: VNCoreMLRequest = {
@@ -103,6 +104,8 @@ class CreateQuoteViewController: UIViewController {
     super.viewDidLoad()
     quoteTextView.isHidden = true
     addStickerButton.isEnabled = false
+    addCanvasForDrawing()
+    drawingView.isHidden = true
   }
   
   // MARK: - Actions
@@ -151,7 +154,15 @@ private extension CreateQuoteViewController {
   }
   
   func addCanvasForDrawing() {
-    // TBD
+    drawingView = DrawingView(frame: stickerView.bounds)
+    view.addSubview(drawingView)
+    drawingView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      drawingView.topAnchor.constraint(equalTo: stickerView.topAnchor),
+      drawingView.leftAnchor.constraint(equalTo: stickerView.leftAnchor),
+      drawingView.rightAnchor.constraint(equalTo: stickerView.rightAnchor),
+      drawingView.bottomAnchor.constraint(equalTo: stickerView.bottomAnchor)
+    ])
   }
   
   func getQuote(for keywords: [String]? = nil) -> Quote? {
@@ -218,6 +229,8 @@ extension CreateQuoteViewController: UIImagePickerControllerDelegate, UINavigati
     imageView.image = image
     quoteTextView.isHidden = false
     addStickerButton.isEnabled = true
+    drawingView.clearCanvas()
+    drawingView.isHidden = false
 		starterLabel.isHidden = true
     clearStickersFromCanvas()
     
